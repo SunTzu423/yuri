@@ -15,9 +15,6 @@ Gelbooru containing those tags. Use with caution!
 
 `/yuri` and `/yaoi` also do not send images containing the `bdsm` tag.
 
-You can host this bot yourself, or you may use [my own instance which is hosted
-by me](https://discord.com/oauth2/authorize?client_id=1322135835184861194) (IT'S DOWN RN DO NOT USE).\
-If you use this one, please consider donating to [my Ko-fi](https://ko-fi.com/vesss).\
-This bot is licensed under the MIT license.
+Ts bot works yo!
 
 ![image](./images/example.png)
