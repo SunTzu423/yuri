@@ -10,4 +10,4 @@ There are four commands:
 
 Ts bot works yo!
 
-![image](./images/example.png)
+![image](./images/example.jpg)
