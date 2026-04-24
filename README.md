@@ -11,3 +11,5 @@ There are four commands:
 Ts bot works yo!
 
 ![image](./images/example.jpg)
+
+DISCLAIMER: Most of this project was ChatGPTs work and not my own, I do not have the time nor capability of learning this language currently but I still wanted to provide this bot for my friends.
