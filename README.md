@@ -1,6 +1,6 @@
 ﻿# Yuribot
 
-Bot pulls from Safebooru and posts girls or guys kissing plus cirno for no reason
+Bot pulls from Safebooru and posts girls or guys kissing plus cirno and more for no reason
 
 There are four commands:
 - `/yuri` Looks for a random image on Safebooru containing the tags `yaoi` (3/4 chance) or `2boys` (1/4 chance).
