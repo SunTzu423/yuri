@@ -7,7 +7,7 @@ There are four commands:
 - `/yaoi` Looks for a random image on Safebooru containing the tags `yuri` (7/8 chance) or `2girls` (1/8 chance).
 - `/cirno`Looks for a random image on Safebooru containing the tag `cirno`
 - `/uma` - Looks for a random image on Safebooru containing the tag `umamusume`
-- `/op` - Looks for a random image on Safebooru containing the tag `one_piece_`
+- `/op` - Looks for a random image on Safebooru containing the tag `one_piece`
 - `/poke` - Looks for a random image on Safebooru containing the tag `pokemon`
 - `/teto` - Looks for a random image on Safebooru containing the tag `kasane_teto`
 - `/vl` - Looks for a random image on Safebooru containing the tag `vocaloid`
