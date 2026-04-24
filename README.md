@@ -11,5 +11,3 @@ There are four commands:
 Ts bot works yo!
 
 ![image](./images/example.jpg)
-
-Simple Sanity Check for Beta Branch
