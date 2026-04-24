@@ -1,6 +1,8 @@
 defmodule Yuribot.Command.Ping do
-  require Logger
   alias Nostrum.Api
+  import Bitwise
+
+  @discord_epoch 1_420_070_400_000
 
   def command_def() do
     %{
@@ -10,13 +12,16 @@ defmodule Yuribot.Command.Ping do
   end
 
   def command_fn(interaction) do
-    message = %{
+    created_at = (interaction.id >>> 22) + @discord_epoch
+    now = System.system_time(:millisecond)
+
+    ping = abs(now - created_at)
+
+    Api.create_interaction_response(interaction, %{
       type: 4,
       data: %{
-        content: "Hello buddy!"
+        content: "Hello buddy! That took #{ping}ms"
       }
-    }
-
-    Api.create_interaction_response(interaction, message)
+    })
   end
 end

@@ -10,7 +10,7 @@ defmodule Yuribot.Command.Cirno do
 
   def command_fn(interaction) do
     tags = ["cirno"]
-    Yuribot.Command.Shared.Gelbooru.command_fn(interaction, tags, "9", "cirno")	
+    Yuribot.Command.Shared.Safebooru.command_fn(interaction, tags, "9", "cirno")	
   end
 end
 
