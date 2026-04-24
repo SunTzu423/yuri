@@ -6,9 +6,9 @@ There are four commands:
 - `/yuri` Looks for a random image on Safebooru containing the tags `yaoi` (3/4 chance) or `2boys` (1/4 chance).
 - `/yaoi` Looks for a random image on Safebooru containing the tags `yuri` (7/8 chance) or `2girls` (1/8 chance).
 - `/cirno`Looks for a random image on Safebooru containing the tag `cirno`
-- `uma` - Looks for a random image on Safebooru containing the tag `umamusume`
-- `op` - Looks for a random image on Safebooru containing the tag `one_piece_`
-- `poke` - Looks for a random image on Safebooru containing the tag `pokemon`
+- `/uma` - Looks for a random image on Safebooru containing the tag `umamusume`
+- `/op` - Looks for a random image on Safebooru containing the tag `one_piece_`
+- `/poke` - Looks for a random image on Safebooru containing the tag `pokemon`
 - `/ping` Does as it sounds, checks bot response time.
 
 Ts bot works yo!
