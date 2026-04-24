@@ -9,6 +9,7 @@ There are four commands:
 - `/uma` - Looks for a random image on Safebooru containing the tag `umamusume`
 - `/op` - Looks for a random image on Safebooru containing the tag `one_piece_`
 - `/poke` - Looks for a random image on Safebooru containing the tag `pokemon`
+- `/teto` - Looks for a random image on Safebooru containing the tag `kasane_teto`
 - `/ping` Does as it sounds, checks bot response time.
 
 Ts bot works yo!
