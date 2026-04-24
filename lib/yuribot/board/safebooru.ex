@@ -14,7 +14,7 @@ defmodule Yuribot.Board.Safebooru do
     end
   end
 
-  defp create_url(user_tags, pid \\ nil) do
+  defp create_url(user_tags, pid) do
     tags = create_tags(user_tags)
 
     url =
@@ -29,7 +29,7 @@ defmodule Yuribot.Board.Safebooru do
     end
   end
 
-  defp request(user_tags, pid \\ nil) do
+  defp request(user_tags, pid) do
     HTTPoison.get(create_url(user_tags, pid))
   end
 
