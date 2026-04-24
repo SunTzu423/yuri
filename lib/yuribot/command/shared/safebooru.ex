@@ -22,12 +22,25 @@ defmodule Yuribot.Command.Shared.Safebooru do
       |> maybe_put_image(reply_data.image_url)
 
     %{
-      type: 4,
-      data: %{
-        flags: flags,
-        embeds: [image_embed]
+  type: 4,
+  data: %{
+    flags: flags,
+    embeds: [image_embed],
+    components: [
+      %{
+        type: 1,
+        components: [
+          %{
+            type: 2,
+            style: 4,
+            label: "Delete",
+            custom_id: "delete_image"
+          }
+        ]
       }
-    }
+    ]
+  }
+}
   end
 
   defp maybe_put_image(embed, nil), do: embed
@@ -38,6 +51,36 @@ defmodule Yuribot.Command.Shared.Safebooru do
   end
 
   defp maybe_put_image(embed, _), do: embed
+
+  defp source_or_post_url(source, post_id) do
+    cond do
+      is_nil(source) or source == "" ->
+        safebooru_post_url(post_id)
+
+      String.starts_with?(source, "https://i.pximg.net") ->
+        safebooru_post_url(post_id)
+
+      true ->
+        source
+    end
+  end
+
+  defp safebooru_post_url(post_id) do
+    "https://safebooru.org/index.php?page=post&s=view&id=#{post_id}"
+  end
+
+  defp source_label(source) do
+  cond do
+    is_nil(source) or source == "" ->
+      "Safebooru"
+
+    String.starts_with?(source, "https://i.pximg.net") ->
+      "Safebooru"
+
+    true ->
+      "Source"
+    end
+  end
 
   def command_fn(interaction, tags, title \\ nil, bucket_key \\ nil) do
     resolved_bucket =
@@ -53,10 +96,7 @@ defmodule Yuribot.Command.Shared.Safebooru do
             title: title,
             image_url: image.url,
             description:
-              case image.source do
-                nil -> "[Source unavailable]"
-                _ -> "[Source](#{image.source})"
-              end,
+  "[#{source_label(image.source)}](#{source_or_post_url(image.source, image.id)})",
             footer: "id: " <> Integer.to_string(image.id)
           })
 
