@@ -1,5 +1,5 @@
-defmodule Yuribot.Command.Shared.Gelbooru do
-  alias Yuribot.Board.Gelbooru
+defmodule Yuribot.Command.Shared.Safebooru do
+  alias Yuribot.Board.Safebooru
 
   defstruct [:title, :description, :image_url, :footer, ephemeral?: false]
 
@@ -47,9 +47,9 @@ defmodule Yuribot.Command.Shared.Gelbooru do
       end
 
     response =
-      case Gelbooru.image(tags, resolved_bucket) do
+      case Safebooru.image(tags, resolved_bucket) do
         {:ok, image} ->
-          make_reply(%Yuribot.Command.Shared.Gelbooru{
+          make_reply(%Yuribot.Command.Shared.Safebooru{
             title: title,
             image_url: image.url,
             description:
@@ -61,32 +61,26 @@ defmodule Yuribot.Command.Shared.Gelbooru do
           })
 
         {:error, :no_post} ->
-          make_reply(%Yuribot.Command.Shared.Gelbooru{
+          make_reply(%Yuribot.Command.Shared.Safebooru{
             title: "Error!",
             description: "No post found! Perhaps no post with these tags exists.",
             ephemeral?: true
           })
 
         {:error, :http_fail} ->
-          make_reply(%Yuribot.Command.Shared.Gelbooru{
+          make_reply(%Yuribot.Command.Shared.Safebooru{
             title: "Error!",
             description: "HTTP failure while contacting Safebooru.",
             ephemeral?: true
           })
 
         {:error, :json_fail} ->
-          make_reply(%Yuribot.Command.Shared.Gelbooru{
+          make_reply(%Yuribot.Command.Shared.Safebooru{
             title: "Error!",
             description: "Failed to parse Safebooru response.",
             ephemeral?: true
           })
 
-        {:error, :no_auth_key} ->
-          make_reply(%Yuribot.Command.Shared.Gelbooru{
-            title: "Error!",
-            description: "This source does not require an auth key anymore, so something is misconfigured.",
-            ephemeral?: true
-          })
       end
 
     Nostrum.Api.create_interaction_response(interaction, response)

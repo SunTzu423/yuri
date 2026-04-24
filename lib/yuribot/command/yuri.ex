@@ -10,6 +10,6 @@ defmodule Yuribot.Command.Yuri do
 
   def command_fn(interaction) do
     tag = Enum.random(["yuri", "yuri", "yuri", "yuri", "yuri", "yuri", "yuri", "2girls"])
-    Yuribot.Command.Shared.Gelbooru.command_fn(interaction,[tag], "Yuri! Woohoo!", "yuri")	
+    Yuribot.Command.Shared.Safebooru.command_fn(interaction,[tag], "Yuri! Woohoo!", "yuri")	
   end
 end

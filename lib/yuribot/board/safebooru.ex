@@ -1,4 +1,4 @@
-defmodule Yuribot.Board.Gelbooru do
+defmodule Yuribot.Board.Safebooru do
   require Logger
 
   @base_url "https://safebooru.org/index.php?page=dapi&s=post&q=index&json=1&limit=300"
